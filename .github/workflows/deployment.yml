@@ -35,6 +35,7 @@ jobs:
     - name: Build, tag, and push image to Amazon ECR
       run: |
         docker build -t dev .
+        docker tag dev:latest public.ecr.aws/k6h8q3q2/dev:latest
         docker push public.ecr.aws/k6h8q3q2/dev:latest
 
     - name: Update kube config
